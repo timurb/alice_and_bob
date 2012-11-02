@@ -1,4 +1,11 @@
-require 'person'
+#!/usr/bin/env ruby
+
+begin
+  require 'person'
+rescue LoadError
+  puts "Run me as `ruby -Ilib #{__FILE__}`"
+  exit 1
+end
 
 alice = Person.new(6,20)
 bob = Person.new(20,6)
